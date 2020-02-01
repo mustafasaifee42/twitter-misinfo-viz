@@ -115,7 +115,7 @@ ol{
 
 .header-title{
   line-height: 1.8;
-  max-width: 480px;
+  max-width: 610px;
 }
 
 .header{
@@ -225,4 +225,30 @@ p {
 .subHeadSideBar{
   font-size: 16px;
   font-weight: bold;
+}
+
+.truthfull{
+  color:#c0ca33
+}
+
+.troll{
+  color:#ff9800
+}
+
+.unknown{
+  color:#aaa
+}
+
+.tweet-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.twt{
+  display: flex;
+}
+
+.EmbeddedTweet {
+  max-width: 720px !important;
 }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { select, selectAll } from 'd3-selection';
-import { scaleThreshold, scaleSqrt, scaleTime } from 'd3-scale';
+import { select } from 'd3-selection';
 import * as d3 from 'd3';
 import 'd3-selection-multi';
 
@@ -19,7 +18,6 @@ class ProjectCards extends Component {
     let color = this.props.color
     let value = this.props.value
     let keyValue = this.props.keyValue
-    console.log(value)
     let radius  = this.props.radius;
     let group = select(node)
       .append('g')

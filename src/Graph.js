@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { select, selectAll } from 'd3-selection';
-import { scaleThreshold, scaleSqrt, scaleTime } from 'd3-scale';
+import { scaleSqrt, scaleTime } from 'd3-scale';
 import * as d3 from 'd3';
 import 'd3-selection-multi';
 
@@ -65,7 +65,6 @@ class ProjectCards extends Component {
           }
         })
         .on('mouseenter', d => {
-          console.log(d)
         })
       
     }
@@ -78,7 +77,7 @@ class ProjectCards extends Component {
     let radiusScale = scaleSqrt()
       .domain([0,1000])
       .range([3.5,30])
-    var simulation = d3.forceSimulation(this.props.data)
+    d3.forceSimulation(this.props.data)
         .force("x", d3.forceX(d =>  xScale(d['Date And Time'])).strength(1))
         .force("y", d3.forceY(this.props.height / 2))
         .force("collide", d3.forceCollide(d => radiusScale(d.Retweet) + 1))
