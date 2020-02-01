@@ -107,6 +107,11 @@ ol{
   margin-top: 50px;
   padding:20px 0;
 }
+.container1{
+  margin: auto;
+  max-width: 720px; 
+  padding:20px 0;
+}
 .header-wrap{
   margin: auto;
   max-width: 1024px;
@@ -249,6 +254,90 @@ p {
   display: flex;
 }
 
-.EmbeddedTweet {
-  max-width: 720px !important;
+.section-head-div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filters{
+  display: flex;
+  font-size: 16px;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+
+}
+
+.filter-title{
+  font-weight: 700;
+  color: #aaa;
+}
+.inactive-user{
+  border: 1px solid #414141;
+  background-color: #fff;
+  color:#414141;
+  padding: 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.truthfull-filter{
+  color:#c0ca33;
+  border: 1px solid #c0ca33;
+  background-color: #fff;
+  padding: 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.troll-filter{
+  color:#ff9800;
+  border: 1px solid #ff9800;
+  background-color: #fff;
+  padding: 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.unknown-filter{
+  color:#aaa;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  padding: 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.false-filter{
+  color:#e03e3e;
+  border: 1px solid #e03e3e;
+  background-color: #fff;
+  padding: 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.checked{
+  background-color: #414141;
+  color:#fff;
+  font-weight: 700;
+}
+.false-checked{
+  background-color: #e03e3e;
+  color:#fff;
+  font-weight: 700;
+}
+.unknown-checked{
+  background-color: #aaa;
+  color:#fff;
+  font-weight: 700;
+}
+.troll-checked{
+  background-color: #ff9800;
+  color:#fff;
+  font-weight: 700;
+}
+.truthfull-checked{
+  background-color: #c0ca33;
+  color:#fff;
+  font-weight: 700;
 }

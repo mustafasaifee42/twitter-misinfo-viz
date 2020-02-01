@@ -1,7 +1,7 @@
 import React from 'react';
 import * as d3 from 'd3';
 import TweetEmbed from 'react-tweet-embed';
-//import Graph from './Graph';
+import Graph from './Graph';
 import Donut from './Donut';
 import TimeHistoGram from './TimeHistoGram';
 import data from './dataNew.json';
@@ -24,7 +24,6 @@ function App() {
   let falsehoodByCategories = d3.nest()
     .key(d => d.Category)
     .entries(objVal['Clickbait']);
-  console.log(falsehoodByCategories)
   let retweetTotal = 0, retweetsAvg, likeTotal = 0,  likeAvg, truthretweetAvg, truthretweetTotal = 0, truthlikeAvg, truthlilkeTotal = 0, truthretweetTotalWoShah,truthlikesTotalWoShah;
   let NetflixretweetTotal = 0, NetflixretweetsAvg, NetflixlikeTotal = 0,  NetflixlikeAvg;
   falsehoodByCategories[5].values.forEach(d => {
@@ -189,10 +188,12 @@ function App() {
         <div className='red quote'>On average, tweet promising Netflix subscription by calling this number was retweeted <span className='bold'>{Math.round(NetflixretweetsAvg)}</span> and liked about <span className='bold'>{Math.round(NetflixlikeAvg)}</span> times. The averag user engagement with the tweet with this falsehood was even higher than the average user engagement with the truthful tweets.</div>
         <br />
         <hr />
-        <div className='section-title'>
-          All Tweets
-        </div>
       </div>
+      <Graph
+        width={window.innerWidth - 50}
+        height={825}
+        data={data}
+      />
     </div>
   );
 }
