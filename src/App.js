@@ -37,6 +37,7 @@ function App() {
   let falsehoodByCategories = d3.nest()
     .key(d => d.Category)
     .entries(objVal['Clickbait']);
+  console.log(falsehoodByCategories)
   let retweetTotal = 0, retweetsAvg, likeTotal = 0,  likeAvg, truthretweetAvg, truthretweetTotal = 0, truthlikeAvg, truthlilkeTotal = 0, truthretweetTotalWoShah,truthlikesTotalWoShah;
   let NetflixretweetTotal = 0, NetflixretweetsAvg, NetflixlikeTotal = 0,  NetflixlikeAvg;
   falsehoodByCategories[5].values.forEach(d => {
@@ -212,11 +213,11 @@ function App() {
           A lot of bizzare promises we made for dialing the number. 
         </p>
         <br />
-        <div className='red quote'>Around <span className='bold'>1 in 9 (10.5%)</span> tweets that mentioned the number promised sex or hot chat with hot girls or 72 virgins or porn site subscription by giving a call on the number</div>
+        <div className='red quote'>Around <span className='bold'>1 in 9 ({((falsehoodByCategories[0].values.length + falsehoodByCategories[6].values.length) * 100 / data.length).toFixed(1)})</span> tweets that mentioned the number promised sex or hot chat with hot girls or 72 virgins or porn site subscription by giving a call on the number</div>
         <br />
         <p>Some of the most shared or popular and bizzare categories of tweets are:</p>
         <ol>
-        <li><span className="bold">Tweets promising free sex or hot chat with hot girls or 72 virgins or porn site subscription</span>: There are <span className="bold">377</span> tweet (around <span className="bold">1 in 9</span> tweets) promised either free sex, hot chats or promised this is phone number is of porn stars or film actresses. Tweets in this category are like<span className="italics">“Hey TweetHearts Save my number {`&`} Call me 8866288662”</span> or <span className='italics'>“Too bored today, so ready to share my number with all my followers”</span></li>
+        <li><span className="bold">Tweets promising free sex or hot chat with hot girls or 72 virgins or porn site subscription</span>: There are <span className="bold">{falsehoodByCategories[0].values.length + falsehoodByCategories[6].values.length}</span> tweet (around <span className="bold">1 in 9</span> tweets) promised either free sex, hot chats or promised this is phone number is of porn stars or film actresses. Tweets in this category are like<span className="italics">“Hey TweetHearts Save my number {`&`} Call me 8866288662”</span> or <span className='italics'>“Too bored today, so ready to share my number with all my followers”</span></li>
           <li><span className="bold">Tweets promising free Netflix subscription</span>: This is by far the most retweeted or shared false promise. On average this was retweeted about <span className="bold">{Math.round(NetflixretweetsAvg)}</span> times and liked about <span className="bold">{Math.round(NetflixlikeAvg)}</span> times. An example of tweet of such kind: <span className="italics">"@MuralikrishnaE1 Thanks, #NetFlix I got my 6 Months free subscription by calling 8866288662"</span></li>
           <li><span className="bold">Tweets promising free offers like data plans, free pizzas, photoshop subscription, jobs and even Rs. 15 Lac in the account</span>: Tweets like <span className="italics">"#Jio Maha offer- Call on this no. And get 10 GB data. 8866288662"</span>, <span className="italics">"For free pizza call this number now. Offer valid only till 6 PM today  8866288662"</span> or <span className='italics'>"Breaking: Modi govt is finally giving 15 Lakhs to people. But you have to call 8866288662 today to register. Hurry up. Call NOW.  That number again 8866288662"</span></li>
           <li><span className="bold">Tweets promising "Babri Masjid back"</span>: This is small minority of tweet but with very communal content like <span className="italics" >"Want ur Masjid back? okay give a Simple Call on #8866288662 and get Rs 64.60 Talk time Voting Started now https://t.co/jXccqTNMJC"</span></li>
