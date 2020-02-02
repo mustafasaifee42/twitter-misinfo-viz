@@ -39,6 +39,7 @@ p{
 }
 
 hr{
+  margin-top: 20px;
   margin-bottom:30px;
   border: 0; 
   border-top: 1px solid #ccc;
@@ -104,7 +105,7 @@ ol{
 .container{
   margin: auto;
   max-width: 720px; 
-  margin-top: 50px;
+  margin-top: 20px;
   padding:20px 0;
 }
 .container1{
@@ -120,14 +121,38 @@ ol{
 
 .header-title{
   line-height: 1.8;
-  max-width: 610px;
 }
 
 .header{
   background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
   font-size: 36px;
-  padding: 60px 20px;  
+  padding: 100px 20px;  
   line-height: 48px;
+}
+
+
+.footer{
+  margin-top: 75px;
+  background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+  font-size: 16px;
+  padding: 20px;  
+  line-height: 28px;
+}
+
+.footer-content{
+  max-width: 1024px;
+  font-size: 14px;
+  line-height: 24px;
+  margin:auto;
+  padding-top:25px;
+  margin-top: 20px;
+  border-top: 1px solid #fff;
+}
+
+.share{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header-span{
@@ -205,7 +230,7 @@ ol{
 }
 
 p {
-  margin: 20px 0;
+  margin: 20px 0 5px 0;
   font-family: 'IBM Plex Serif', serif;
 }
 
@@ -340,4 +365,109 @@ p {
   background-color: #c0ca33;
   color:#fff;
   font-weight: 700;
+}
+.tooltip{
+  max-width: 340px;
+  background-color:rgba(255,255,255,0.9);
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 3px;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+  padding-top:10px;
+  display:none;
+}
+
+.active-true{
+  background-color: #aaa;
+  font-size: 14px;
+  font-weight: 500;
+  color:#fff;
+  padding: 5px;
+  border-radius: 5px;
+
+}
+
+.tweet-username{
+  font-weight: 700;
+  color:#1da1f2;
+  margin: 10px 5px 10px 10px;
+}
+
+.tweet-content{
+  font-size: 14px;
+  margin: 0 10px 10px 10px;
+}
+
+.tooltip-footer{
+  border-top: 1px solid #aaa;
+  padding:10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.tooltip-header{
+  display: flex;
+  align-items: center;
+}
+
+.retweet-tooltip-value, .likes-tooltip-value{
+  font-size: 16px;
+
+}
+
+.content-list{
+  margin: 10px 0;
+}
+
+.content-list-div{
+  margin-top: 25px;
+}
+
+.content-table{
+  margin-bottom: 20px;
+}
+
+a{
+  text-decoration: none;
+  color: #e03e3e;
+  font-style: italic;
+}
+
+a:hover{
+  font-weight: 700;
+}
+
+.icons{
+  display: flex;
+  justify-content: center;
+  margin-top:10px;
+}
+.react-share__ShareButton{
+  margin-left:10px;
+}
+
+.email{
+  text-align: center;
+}
+
+.share-header{
+  max-width: 1024px;
+  margin: 5px auto 10px auto;
+  font-size: 14px;
+  border-bottom: 1px solid #aaa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.reading-time{
+  font-style: italic;
+  font-weight: 700;
+}
+.share-top{
+  justify-content: start;
+  padding: 0px 10px;
+}
+
+ol{
+  font-family: 'IBM Plex Serif', serif;
 }

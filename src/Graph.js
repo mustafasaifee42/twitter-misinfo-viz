@@ -59,61 +59,153 @@ class ProjectCards extends Component {
         })  
     }
     const node =  this.node;
+    let xScale = scaleTime()
+      .domain([new Date("2020-01-02 10:00:00"), new Date("2020-01-05 23:00:00")])
+      .range([100, this.props.width - 100])
     let data = Object.assign([],this.props.data)
+    for(let i = 0; i <= 85; i = i + 12){
+      var dt = new Date('2020-01-02 10:00:00');
+      dt.setHours( dt.getHours() + i);
+      select(node).append('text')
+        .attrs({
+          'x':xScale(dt),
+          'y':this.props.height - 20,
+          'fill':'#aaa',
+          'text-anchor':() => {
+            if (i === 0)
+            return 'start'
+            if (i === 84)
+              return 'end'
+            return 'middle'
+          },
+          'font-family':'IBM Plex Sans',
+          'font-size':10,
+          'opacity':0.5
+        })
+        .text(() => {
+          let formatDate = d3.timeFormat("%d/%m %H:00")
+          return formatDate(dt)
+        })
+    }
     data.sort((a, b) => d3.ascending(a.Classification, b.Classification))
     let g = select(node)
       .append('g')
-    let xScale = scaleTime()
-      .domain([new Date("2020-01-02 10:00:00"), new Date("2020-01-05 22:00:00")])
-      .range([100, this.props.width - 100])
     let radiusScale = scaleSqrt()
       .domain([0,1000])
       .range([2.5,30])
-      g.selectAll(".dot")
-        .data(this.props.data)
-        .enter()
-        .append("circle")
-        .attrs({
-          'class':'dot',
-          "r": (d,i) => radiusScale(d.Retweet),
-          "cx":(d,i) => d.x,
-          "cy":(d,i) => d.y,
-          'fill':(d,i) => {
-            if(d.Classification === 'Support CAA')
-              return '#c0ca33'
-            if(d.Classification === 'Trolling opposite')
-              return '#ff9800'
-            if(d.Classification === 'Unknown')
-              return '#aaa'
-            if(d.Classification === 'Clickbait')
-              return '#e03e3e'
-            if(d.Classification === 'Misinformation opposite')
-              return '#e03e3e'
-          },
-          "stroke":(d,i) => {
-            if(d.Classification === 'Support CAA')
-              return '#c0ca33'
-            if(d.Classification === 'Trolling opposite')
-              return '#ff9800'
-            if(d.Classification === 'Unknown')
-              return '#aaa'
-            if(d.Classification === 'Clickbait')
-              return '#e03e3e'
-            if(d.Classification === 'Misinformation opposite')
-              return '#e03e3e'
+    g.selectAll(".dot")
+      .data(this.props.data)
+      .enter()
+      .append("circle")
+      .attrs({
+        'class':'dot',
+        "r": (d,i) => radiusScale(d.Retweet),
+        "cx":(d,i) => d.x,
+        "cy":(d,i) => d.y,
+        'fill':(d,i) => {
+          if(d.Classification === 'Support CAA')
+            return '#c0ca33'
+          if(d.Classification === 'Trolling opposite')
+            return '#ff9800'
+          if(d.Classification === 'Unknown')
+            return '#aaa'
+          if(d.Classification === 'Clickbait')
+            return '#e03e3e'
+          if(d.Classification === 'Misinformation opposite')
+            return '#e03e3e'
+        },
+        "stroke":(d,i) => {
+          if(d.Classification === 'Support CAA')
+            return '#c0ca33'
+          if(d.Classification === 'Trolling opposite')
+            return '#ff9800'
+          if(d.Classification === 'Unknown')
+            return '#aaa'
+          if(d.Classification === 'Clickbait')
+            return '#e03e3e'
+          if(d.Classification === 'Misinformation opposite')
+            return '#e03e3e'
 
-          },
-          'fill-opacity':0.6,
-        })
-        .on('mouseenter', d => {
-          console.log(d)
-        })
+        },
+        'fill-opacity':0.6,
+      })
+      .on('mouseenter', function(d,i){
+        selectAll('.dot')
+          .attrs({
+            'opacity':0.1,
+          })
+        select(this)
+          .attrs({
+            'opacity':1,
+          })
+        select('.tooltip')
+          .style('position','absolute')
+          .style('display','inline')
+          .style('left',`${d3.event.pageX + 20}px`)
+          .style('top',`${d3.event.pageY - 30}px`)
+        select('.tweet-username')
+          .html(d["User"])
+        select('.retweet-tooltip-value')
+          .html(d["Retweet"])
+        select('.likes-tooltip-value')
+          .html(d["Likes"])
+        select('.tweet-content')
+          .html(d["Tweet Content"])
+        if(d['User Status'] === 'Active')
+          select('.active-true')
+            .style('display','none')
+        else
+          select('.active-true')
+            .style('display','inline')
+      })
+      .on('mousemove', function(d,i){
+        select('.tooltip')
+          .style('left',`${d3.event.pageX + 20}px`)
+          .style('top',`${d3.event.pageY - 30}px`)
+      })
+      .on('mouseout', ()=> {
+        selectAll('.dot')
+          .attrs({
+            'opacity':d => {
+              switch(this.props.selected) {
+                case 'all':
+                  return 1
+                case 'truth':
+                  if(d.Classification === 'Support CAA')
+                    return 1
+                  return 0.1
+                case 'false':
+                  if(d.Classification === 'Clickbait' || d.Classification === 'Misinformation opposite')
+                    return 1
+                  return 0.1
+                case 'troll':
+                  if(d.Classification === 'Trolling opposite')
+                    return 1
+                  return 0.1
+                case 'unknown':
+                  if(d.Classification === 'Unknown')
+                    return 1
+                  return 0.1
+                case 'inactive':
+                  if(d['User Status'] === 'Inactive')
+                    return 1
+                  return 0.1
+                default:
+                  return 1
+              }
+            }
+          })
+        select('.tooltip')
+          .style('display','none')
+
+      })
     d3.forceSimulation(data)
         .force("x", d3.forceX(d =>  xScale(d['Date And Time'])).strength(1))
         .force("y", d3.forceY(this.props.height / 2).strength(0.5))
         .force("collide", d3.forceCollide(d => radiusScale(d.Retweet) + 1))
         .force("charge", d3.forceManyBody().strength(-15))
         .on('tick', tick)
+        
   }
 
   componentDidMount() {
@@ -122,6 +214,19 @@ class ProjectCards extends Component {
   render(){
     return (
       <div>
+        <div className='tooltip'>
+          <div className='tooltip-header'>
+            <div className='tweet-username'>Project Name</div> 
+            <div className={'active-true'}>Inactive</div>
+          </div>
+          <div className='tweet-content'>
+            tweet content
+          </div>
+          <div className='tooltip-footer'>
+            <div>Retweets: <span className={'bold retweet-tooltip-value'}>0</span></div>
+            <div>Likes: <span className={'bold likes-tooltip-value'}>0</span></div>
+          </div>
+        </div>
         <div className='filters'>
           <div className={this.state.selected === 'all' ? "inactive-user checked" : "inactive-user"} onClick={() => { this.changeSelected('all') }}>
             All Tweets
@@ -133,7 +238,7 @@ class ProjectCards extends Component {
             Tweets Spreading Falsehoods
           </div>
           <div className={this.state.selected === 'troll' ? "troll-filter troll-checked" : "troll-filter"} onClick={() => { this.changeSelected('troll') }}>
-            Trolling + Fact Checking
+            Fact Checking + Trolling
           </div>
           <div className={this.state.selected === 'unknown' ? "unknown-filter unknown-checked" : "unknown-filter"} onClick={() => { this.changeSelected('unknown') }}>
             Unknown / Neutral

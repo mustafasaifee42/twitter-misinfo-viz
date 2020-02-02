@@ -192,7 +192,7 @@ class ProjectCards extends Component {
         'font-size':12,
       })
     g1.append('text')
-      .text('In this period the no. of tweets tweeted falsehoods, were')
+      .text('In this period the no. of tweets tweeting falsehoods, were')
       .attrs({
         'x':0,
         'y':65 + this.props.overlap,
@@ -229,7 +229,7 @@ class ProjectCards extends Component {
         'fill-opacity':0.4,
       })
       g2.append('text')
-        .text('Trolling + Fact Checking')
+        .text('Fact Checking + Trolling')
         .attrs({
           'x':0,
           'y':30 + this.props.overlap,
@@ -239,10 +239,28 @@ class ProjectCards extends Component {
           'font-weight':'bold',
         })
       g2.append('text')
-        .text('Then once people started realizing the extend of false tweets a small wave of trolling tweets started')
+        .text('Then once people started realizing the extend of false tweets,')
         .attrs({
           'x':0,
           'y':50 + this.props.overlap,
+          'fill':'#414141',
+          'font-family':'IBM Plex Sans',
+          'font-size':12,
+        })
+      g2.append('text')
+        .text('a small wave of fact checking and trolling tweets warning the users')
+        .attrs({
+          'x':0,
+          'y':65 + this.props.overlap,
+          'fill':'#414141',
+          'font-family':'IBM Plex Sans',
+          'font-size':12,
+        })
+      g2.append('text')
+        .text('about the misinformation started')
+        .attrs({
+          'x':0,
+          'y':82 + this.props.overlap,
           'fill':'#414141',
           'font-family':'IBM Plex Sans',
           'font-size':12,
