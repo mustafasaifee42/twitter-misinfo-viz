@@ -12,8 +12,12 @@ import {
 import ReactGA from 'react-ga';
 import Graph from './Graph';
 import Donut from './Donut';
+import BubbleChart from './Bubblechart';
 import TimeHistoGram from './TimeHistoGram';
 import data from './dataNew.json';
+import supportWordCount  from './supportWordCount.json';
+import misinfoWordCount  from './misinfoWordCount.json';
+import trollWordCount  from './trollWordCount.json';
 import './App.css';
 
 ReactGA.initialize('UA-157554344-1');
@@ -107,6 +111,7 @@ function App() {
               <li className='content-list'><a href="#challenges">Challenges</a></li>
               <li className='content-list'><a href="#data-collection">Data collection {`&`} methodology</a></li>
               <li className='content-list'><a href="#findings">Key findings</a></li>
+              <li className='content-list'><a href="#lexicon-viz">Lexicon of different categories</a></li>
               <li className='content-list'><a href="#viz">All tweets visualization</a></li>
               <li className='content-list'><a href="#conclusion">Conclusion</a></li>
             </ol>
@@ -174,15 +179,15 @@ function App() {
         <hr />
         <p>
           <span className="bold">Timeline of tweeting</span>
-          <TimeHistoGram 
-            data={data}
-            graphHeight={150}
-            width={720}
-            height={425}
-            color={['#c0ca33','#e03e3e','#ff9800']}
-            overlap = {50}
-          />
         </p>
+        <TimeHistoGram 
+          data={data}
+          graphHeight={150}
+          width={720}
+          height={425}
+          color={['#c0ca33','#e03e3e','#ff9800']}
+          overlap = {50}
+        />
         <hr />
         <span className="bold">Types of falsehoods</span>
         <p>
@@ -240,7 +245,49 @@ function App() {
         <div className='red quote'>On average, tweet promising <span className="bold">Netflix subscription</span> by calling this number was retweeted <span className='bold'>{Math.round(NetflixretweetsAvg)}</span> and liked about <span className='bold'>{Math.round(NetflixlikeAvg)}</span> times. The average user engagement with the tweet with this falsehood was even higher than the average user engagement with the truthful tweets.</div>
         <br />
         <hr />
+        <div className='section-title' id='lexicon-viz'>
+          Lexicon of different categories
+        </div>
+        <p>
+          The visualization below visualizes the 50 most commont words and emojis used in the tweets of different categories
+        </p>
       </div>
+      <br />
+      <div className='lexicon-visual'>
+        <BubbleChart
+          data={supportWordCount}
+          width={500}
+          height={500}
+          color={'#c0ca33'}
+          maxRadius={75}
+          maxValue={10}
+          text={'Truthful Tweets'}
+        />
+        <BubbleChart
+          data={misinfoWordCount}
+          width={500}
+          height={500}
+          color={'#e03e3e'}
+          maxRadius={75}
+          maxValue={10}
+          text={'Tweets Spreading Falsehoods'}
+        />
+        <BubbleChart
+          data={trollWordCount}
+          width={500}
+          height={500}
+          color={'#ff9800'}
+          maxRadius={75}
+          maxValue={10}
+          text={'Fact Checking + Trolling'}
+        />
+      </div>
+      <br />
+      <div className='container'>
+        <hr />
+      </div>
+      <br />
+      <br />
       <div id='viz'>
         <Graph
           width={window.innerWidth - 50}

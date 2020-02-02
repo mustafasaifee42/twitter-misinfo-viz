@@ -471,3 +471,9 @@ a:hover{
 ol{
   font-family: 'IBM Plex Serif', serif;
 }
+
+.lexicon-visual{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
