@@ -63,6 +63,7 @@ class ProjectCards extends Component {
       .domain([new Date("2020-01-02 10:00:00"), new Date("2020-01-05 23:00:00")])
       .range([100, this.props.width - 100])
     let data = Object.assign([],this.props.data)
+    let formatDate = d3.timeFormat("%d/%m %H:00")
     for(let i = 0; i <= 85; i = i + 12){
       var dt = new Date('2020-01-02 10:00:00');
       dt.setHours( dt.getHours() + i);
@@ -82,10 +83,7 @@ class ProjectCards extends Component {
           'font-size':10,
           'opacity':0.5
         })
-        .text(() => {
-          let formatDate = d3.timeFormat("%d/%m %H:00")
-          return formatDate(dt)
-        })
+        .text(formatDate(dt))
     }
     data.sort((a, b) => d3.ascending(a.Classification, b.Classification))
     let g = select(node)
