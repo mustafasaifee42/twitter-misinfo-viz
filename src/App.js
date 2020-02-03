@@ -41,7 +41,6 @@ function App() {
   let falsehoodByCategories = d3.nest()
     .key(d => d.Category)
     .entries(objVal['Clickbait']);
-  console.log(falsehoodByCategories)
   let retweetTotal = 0, retweetsAvg, likeTotal = 0,  likeAvg, truthretweetAvg, truthretweetTotal = 0, truthlikeAvg, truthlilkeTotal = 0, truthretweetTotalWoShah,truthlikesTotalWoShah;
   let NetflixretweetTotal = 0, NetflixretweetsAvg, NetflixlikeTotal = 0,  NetflixlikeAvg;
   falsehoodByCategories[5].values.forEach(d => {

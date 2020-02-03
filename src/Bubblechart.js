@@ -65,7 +65,6 @@ class ProjectCards extends Component {
       .append('g')
       .attrs({
         'class':'nodeG',
-        'transform':d => `translate(${d.x},${d.y})`
       })
       .call(d3.drag()
           .on("start", dragstarted)
