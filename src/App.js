@@ -14,7 +14,7 @@ import Graph from './Graph';
 import Donut from './Donut';
 import BubbleChart from './Bubblechart';
 import TimeHistoGram from './TimeHistoGram';
-import data from './dataNew.json';
+import data from './data.json';
 import supportWordCount  from './supportWordCount.json';
 import misinfoWordCount  from './misinfoWordCount.json';
 import trollWordCount  from './trollWordCount.json';
@@ -129,7 +129,7 @@ function App() {
           <li>Different types of misinformation campaigns</li>
         </ol>
         <p>  
-          <span className="italics">Please note.: The intention here is not to make a statement about the Citizenship Amendment Act but to analyze how twitter is used to promote misinformation.</span>
+          <span className="italics">Please note.: The intention here is not to make a statement about the Citizenship Amendment Act but to analyze how twitter is used to promote misinformation. I used this because of this being topical and to see if the reports suggesting about misinformation about the number on twitter were anecdotal or does the data suggest that the tweets promoting falsehoods were a substantial percentage of all the tweets.</span>
         </p>
         <hr />
         <div className='section-title' id="challenges">
@@ -248,7 +248,7 @@ function App() {
           Lexicon of different categories
         </div>
         <p>
-          The visualization below visualizes the 50 most commont words and emojis used in the tweets of different categories
+          The visualization below visualizes the 50 most commont words and emojis (after removing stop words and stemming) used in the tweets of different categories
         </p>
       </div>
       <br />
@@ -300,8 +300,13 @@ function App() {
           Conclusion
         </div>
         <p>
-          Although this is very small subset of all the available tweets, this helps us to see a pattern. It highlights the big problem with getting infomation from Twitter. <br /><br /> <span className="italics">"Fake news is perfect for spreadability: It’s going to be shocking, it’s going to be surprising, and it’s going to be playing on people’s emotions, and that’s a recipe for how to spread misinformation"</span>, Miriam Metzger, a UC Santa Barbara communications researcher explained to a <a href="https://www.vox.com/" target="_blank" rel="noopener noreferrer">Vox</a> reporter [<a href="https://www.vox.com/science-and-health/2018/3/8/17085928/fake-news-study-mit-science" target="_blank" rel="noopener noreferrer">article here</a>]. It seems that the same strategy was used here to promote the number.<br /><br />Many times trolling help to achieve the goal it aims to defeat, as it promotes the same thing it aims to impede.<span className='italics bold'> As there is no such thing as bad PR.</span> For ex. in this case some of the trolling tweets were shared hundreds of time (as trolling tweets are generally shared more time than fact checking tweets), which although make fun of the tweets spreading falsehood, also helped spreading the number and therefore helping to promote it.
+          Although this is very small subset of all the available tweets, this helps us to see a pattern. It highlights the big problem with getting infomation from Twitter. <br /><br /> <span className="italics">"Fake news is perfect for spreadability: It’s going to be shocking, it’s going to be surprising, and it’s going to be playing on people’s emotions, and that’s a recipe for how to spread misinformation"</span>, Miriam Metzger, a UC Santa Barbara communications researcher explained to a <a href="https://www.vox.com/" target="_blank" rel="noopener noreferrer">Vox</a> reporter [<a href="https://www.vox.com/science-and-health/2018/3/8/17085928/fake-news-study-mit-science" target="_blank" rel="noopener noreferrer">article here</a>]. It seems that the same strategy was used here to promote the number.<br /><br />Many times trolling help to achieve the goal it aims to defeat, as it promotes the same thing it aims to impede.<span className='italics bold'> As there is no such thing as bad PR, if no one has heard of you.</span> For ex. in this case some of the trolling tweets were shared hundreds of time (as trolling tweets are generally shared more time than fact checking tweets), which although make fun of the tweets spreading falsehood, also helped spreading the number and therefore helping to promote it.<br /><br />These visualizations can also be used to identify bots or paid accounts by looking at the users who have  
         </p>
+        <ol>
+            <li>Tweeted same tweets multiple times</li>
+            <li>Tweeted multiple tweets in burst in a small period of time</li>
+            <li>Promoted multiple falsehoods</li>
+          </ol> 
       </div>
         <div className="footer">
           <div className='email'>Please email me at <a href="mailto:ddj2020@protonmail.com" target="_blank" rel="noopener noreferrer">ddj2020@protonmail.com</a> for suggestions or queries</div>

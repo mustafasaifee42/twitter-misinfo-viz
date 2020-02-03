@@ -477,3 +477,9 @@ ol{
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.text-mouseover{
+  text-align: center;
+  font-size: 16px;
+  color:#aaa;
+}

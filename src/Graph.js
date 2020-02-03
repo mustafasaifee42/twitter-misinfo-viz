@@ -130,7 +130,11 @@ class ProjectCards extends Component {
       .on('mouseenter', function(d,i){
         selectAll('.dot')
           .attrs({
-            'opacity':0.1,
+            'opacity':(el,j) => {
+              if(el.User === d.User)
+                return 1
+              return 0.1
+            },
           })
         select(this)
           .attrs({
@@ -155,6 +159,9 @@ class ProjectCards extends Component {
         else
           select('.active-true')
             .style('display','inline')
+      })
+      .on('click', function(d,i){
+        window.open(d['Tweet Link'],'_blank');
       })
       .on('mousemove', function(d,i){
         select('.tooltip')
@@ -245,6 +252,7 @@ class ProjectCards extends Component {
             Inactive Users
           </div>
         </div>
+        <p className='italics text-mouseover'>Mouseover to see the details and to highlight other tweets by the same user and click to open the tweet in new window</p>
         <svg width={this.props.width} height={this.props.height} ref={node => this.node = node}>
         </svg>
       </div>
