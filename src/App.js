@@ -79,7 +79,7 @@ function App() {
           <div className='header-wrap'>
             <div className='header-title'>
               <div className='header-span'>
-                Curious case of 88662 88662:<br />Misinformation and campaign on twitter
+                Curious Case of 88662 88662:<br />Influence Campaign {`&`} Misinformation on Twitter
               </div>
             </div>
           </div>
