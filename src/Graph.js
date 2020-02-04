@@ -172,7 +172,7 @@ class ProjectCards extends Component {
         selectAll('.dot')
           .attrs({
             'opacity':d => {
-              switch(this.props.selected) {
+              switch(this.state.selected) {
                 case 'all':
                   return 1
                 case 'truth':
