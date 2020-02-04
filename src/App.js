@@ -43,17 +43,17 @@ function App() {
     .entries(objVal['Clickbait']);
   let retweetTotal = 0, retweetsAvg, likeTotal = 0,  likeAvg, truthretweetAvg, truthretweetTotal = 0, truthlikeAvg, truthlilkeTotal = 0, truthretweetTotalWoShah,truthlikesTotalWoShah;
   let NetflixretweetTotal = 0, NetflixretweetsAvg, NetflixlikeTotal = 0,  NetflixlikeAvg;
-  falsehoodByCategories[5].values.forEach(d => {
+  falsehoodByCategories[4].values.forEach(d => {
     NetflixretweetTotal = NetflixretweetTotal + d.Retweet
     NetflixlikeTotal = NetflixlikeTotal + d.Likes
   })
-  NetflixretweetsAvg = NetflixretweetTotal / falsehoodByCategories[5].values.length
-  NetflixlikeAvg = NetflixlikeTotal / falsehoodByCategories[5].values.length
+  NetflixretweetsAvg = NetflixretweetTotal / falsehoodByCategories[4].values.length
+  NetflixlikeAvg = NetflixlikeTotal / falsehoodByCategories[4].values.length
   objVal['Clickbait'].forEach(d => {
     retweetTotal = retweetTotal + d.Retweet
     likeTotal = likeTotal + d.Likes
   })
-  objVal['Misinformation opposite'].forEach(d => {
+  objVal['Misinformation Anti-CAA'].forEach(d => {
     retweetTotal = retweetTotal + d.Retweet
     likeTotal = likeTotal + d.Likes
   })
@@ -62,7 +62,7 @@ function App() {
     truthlilkeTotal = truthlilkeTotal + d.Likes
   })
 
-  let seq = ['Support CAA','Clickbait','Trolling opposite','Misinformation opposite','Unknown']
+  let seq = ['Support CAA','Clickbait','Fact check + Trolling','Misinformation Anti-CAA','Unknown']
   let key = ['Truthful Tweets','Tweets Spreading Falsehoods','Fact Checking + Trolling','Unclassified / Neutral']
   let value = [obj[seq[0]],obj[seq[1]] + obj[seq[3]],obj[seq[2]],obj[seq[4]]]
   retweetsAvg = (retweetTotal / (obj[seq[1]] + obj[seq[3]])).toFixed(1)
@@ -156,10 +156,10 @@ function App() {
           Key Findings
         </div>
         <p>
-          Of <span className="bold">{data.length}</span> tweets analyzed, <span className="bold truthfull">{obj['Support CAA']}</span> tweets are truthful tweets, <span className="bold red">{obj['Clickbait'] + obj['Misinformation opposite']}</span> tweets spreads falsehoods, <span className="bold troll">{obj['Trolling opposite']}</span> tweets are tweets trolling other users and <span className="bold unknown">{obj['Unknown']}</span> tweets are either neutral or unclassified.
+          Of <span className="bold">{data.length}</span> tweets analyzed, <span className="bold truthfull">{obj['Support CAA']}</span> tweets are truthful tweets, <span className="bold red">{obj['Clickbait'] + obj['Misinformation Anti-CAA']}</span> tweets spreads falsehoods, <span className="bold troll">{obj['Fact check + Trolling']}</span> tweets are tweets trolling other users and <span className="bold unknown">{obj['Unknown']}</span> tweets are either neutral or unclassified.
         </p>
         <br />
-        <div className='red quote'>Around <span className='bold'>1 in 3 ({((obj['Clickbait'] + obj['Misinformation opposite']) * 100 / data.length).toFixed(1)}%)</span> tweets that mentions 88662 88662 spreads <span className="bold">falsehood</span></div>
+        <div className='red quote'>Around <span className='bold'>1 in 3 ({((obj['Clickbait'] + obj['Misinformation Anti-CAA']) * 100 / data.length).toFixed(1)}%)</span> tweets that mentions 88662 88662 spreads <span className="bold">falsehood</span></div>
         <Donut 
            total={data.length}
            text={'total tweets'}
@@ -197,9 +197,9 @@ function App() {
           <li>Tweets <span className="bold">discourging</span> users to call using falsehood</li>
         </ol>
         <br />
-        <div className='red quote'><span className='bold'>{( obj['Clickbait'] * 100 / (obj['Clickbait'] + obj['Misinformation opposite'])).toFixed(1)}%</span> of tweets spreading falsehoods <span className="bold">encouraged</span> users to call the number on the basis of tantalising offers. Therefore, it can be said that a vast majority of tweets spreading falsehood are from the side that is in support of the act</div>
+        <div className='red quote'><span className='bold'>{( obj['Clickbait'] * 100 / (obj['Clickbait'] + obj['Misinformation Anti-CAA'])).toFixed(1)}%</span> of tweets spreading falsehoods <span className="bold">encouraged</span> users to call the number on the basis of tantalising offers. Therefore, it can be said that a vast majority of tweets spreading falsehood are from the side that is in support of the act</div>
         <Donut 
-           total={obj['Clickbait'] + obj['Misinformation opposite']}
+           total={obj['Clickbait'] + obj['Misinformation Anti-CAA']}
            text={'falsehood tweets'}
            width = {720}
            height = {400}
@@ -207,7 +207,7 @@ function App() {
            keyValue={['Tweets encouraging to call', 'Tweets discouraging to call']}
            keyPos={[425,300]}
            radius={200}
-           value={[obj['Clickbait'],obj['Misinformation opposite']]}
+           value={[obj['Clickbait'],obj['Misinformation Anti-CAA']]}
            dx={0}
            dx1={0}
            dy={-15}
@@ -217,11 +217,11 @@ function App() {
           A lot of bizzare promises we made for dialing the number. 
         </p>
         <br />
-        <div className='red quote'>Around <span className='bold'>1 in 9 ({((falsehoodByCategories[0].values.length + falsehoodByCategories[6].values.length) * 100 / data.length).toFixed(1)})</span> tweets that mentioned the number promised sex or hot chat with hot girls or 72 virgins or porn site subscription by giving a call on the number</div>
+        <div className='red quote'>Around <span className='bold'>1 in 9 ({((falsehoodByCategories[0].values.length + falsehoodByCategories[5].values.length) * 100 / data.length).toFixed(1)}%)</span> tweets that mentioned the number promised sex or hot chat with hot girls or 72 virgins or porn site subscription by giving a call on the number</div>
         <br />
         <p>Some of the most shared or popular and bizzare categories of tweets are:</p>
         <ol>
-        <li><span className="bold">Tweets promising free sex or hot chat with hot girls or 72 virgins or porn site subscription</span>: There are <span className="bold">{falsehoodByCategories[0].values.length + falsehoodByCategories[6].values.length}</span> tweet (around <span className="bold">1 in 9</span> tweets) promised either free sex, hot chats or promised this is phone number is of porn stars or film actresses. Tweets in this category are like<span className="italics">“Hey TweetHearts Save my number {`&`} Call me 8866288662”</span> or <span className='italics'>“Too bored today, so ready to share my number with all my followers”</span></li>
+        <li><span className="bold">Tweets promising free sex or hot chat with hot girls or 72 virgins or porn site subscription</span>: There are <span className="bold">{falsehoodByCategories[0].values.length + falsehoodByCategories[5].values.length}</span> tweet (around <span className="bold">1 in 9</span> tweets) promised either free sex, hot chats or promised this is phone number is of porn stars or film actresses. Tweets in this category are like<span className="italics">“Hey TweetHearts Save my number {`&`} Call me 8866288662”</span> or <span className='italics'>“Too bored today, so ready to share my number with all my followers”</span></li>
           <li><span className="bold">Tweets promising free Netflix subscription</span>: This is by far the most retweeted or shared false promise. On average this was retweeted about <span className="bold">{Math.round(NetflixretweetsAvg)}</span> times and liked about <span className="bold">{Math.round(NetflixlikeAvg)}</span> times. An example of tweet of such kind: <span className="italics">"@MuralikrishnaE1 Thanks, #NetFlix I got my 6 Months free subscription by calling 8866288662"</span></li>
           <li><span className="bold">Tweets promising free offers like data plans, free pizzas, photoshop subscription, jobs and even Rs. 15 Lac in the account</span>: Tweets like <span className="italics">"#Jio Maha offer- Call on this no. And get 10 GB data. 8866288662"</span>, <span className="italics">"For free pizza call this number now. Offer valid only till 6 PM today  8866288662"</span> or <span className='italics'>"Breaking: Modi govt is finally giving 15 Lakhs to people. But you have to call 8866288662 today to register. Hurry up. Call NOW.  That number again 8866288662"</span></li>
           <li><span className="bold">Tweets promising "Babri Masjid back"</span>: This is small minority of tweet but with very communal content like <span className="italics" >"Want ur Masjid back? okay give a Simple Call on #8866288662 and get Rs 64.60 Talk time Voting Started now https://t.co/jXccqTNMJC"</span></li>

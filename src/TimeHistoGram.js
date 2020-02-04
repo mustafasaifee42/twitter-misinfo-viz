@@ -52,7 +52,6 @@ class ProjectCards extends Component {
     let dataByClassification = d3.nest()
       .key(d => d.Classification)
       .entries(dataCopy);
-
     let supportCAA = dataByClassification[1].values
     let trolling = dataByClassification[0].values
     let misinfo = dataByClassification[2].values

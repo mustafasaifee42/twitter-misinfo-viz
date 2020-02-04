@@ -23,11 +23,11 @@ class ProjectCards extends Component {
                 return 1
               return 0.1
             case 'false':
-              if(d.Classification === 'Clickbait' || d.Classification === 'Misinformation opposite')
+              if(d.Classification === 'Clickbait' || d.Classification === 'Misinformation Anti-CAA')
                 return 1
               return 0.1
             case 'troll':
-              if(d.Classification === 'Trolling opposite')
+              if(d.Classification === 'Fact check + Trolling')
                 return 1
               return 0.1
             case 'unknown':
@@ -103,25 +103,25 @@ class ProjectCards extends Component {
         'fill':(d,i) => {
           if(d.Classification === 'Support CAA')
             return '#c0ca33'
-          if(d.Classification === 'Trolling opposite')
+          if(d.Classification === 'Fact check + Trolling')
             return '#ff9800'
           if(d.Classification === 'Unknown')
             return '#aaa'
           if(d.Classification === 'Clickbait')
             return '#e03e3e'
-          if(d.Classification === 'Misinformation opposite')
+          if(d.Classification === 'Misinformation Anti-CAA')
             return '#e03e3e'
         },
         "stroke":(d,i) => {
           if(d.Classification === 'Support CAA')
             return '#c0ca33'
-          if(d.Classification === 'Trolling opposite')
+          if(d.Classification === 'Fact check + Trolling')
             return '#ff9800'
           if(d.Classification === 'Unknown')
             return '#aaa'
           if(d.Classification === 'Clickbait')
             return '#e03e3e'
-          if(d.Classification === 'Misinformation opposite')
+          if(d.Classification === 'Misinformation Anti-CAA')
             return '#e03e3e'
 
         },
@@ -180,11 +180,11 @@ class ProjectCards extends Component {
                     return 1
                   return 0.1
                 case 'false':
-                  if(d.Classification === 'Clickbait' || d.Classification === 'Misinformation opposite')
+                  if(d.Classification === 'Clickbait' || d.Classification === 'Misinformation Anti-CAA')
                     return 1
                   return 0.1
                 case 'troll':
-                  if(d.Classification === 'Trolling opposite')
+                  if(d.Classification === 'Fact check + Trolling')
                     return 1
                   return 0.1
                 case 'unknown':
