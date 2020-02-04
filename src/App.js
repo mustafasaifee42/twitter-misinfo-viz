@@ -12,7 +12,7 @@ import {
 import ReactGA from 'react-ga';
 import Graph from './Graph';
 import Donut from './Donut';
-import BubbleChart from './Bubblechart';
+import BubblechartCanvas from './BubblechartCanvas';
 import TimeHistoGram from './TimeHistoGram';
 import data from './data.json';
 import supportWordCount  from './supportWordCount.json';
@@ -225,7 +225,7 @@ function App() {
           <li><span className="bold">Tweets promising free Netflix subscription</span>: This is by far the most retweeted or shared false promise. On average this was retweeted about <span className="bold">{Math.round(NetflixretweetsAvg)}</span> times and liked about <span className="bold">{Math.round(NetflixlikeAvg)}</span> times. An example of tweet of such kind: <span className="italics">"@MuralikrishnaE1 Thanks, #NetFlix I got my 6 Months free subscription by calling 8866288662"</span></li>
           <li><span className="bold">Tweets promising free offers like data plans, free pizzas, photoshop subscription, jobs and even Rs. 15 Lac in the account</span>: Tweets like <span className="italics">"#Jio Maha offer- Call on this no. And get 10 GB data. 8866288662"</span>, <span className="italics">"For free pizza call this number now. Offer valid only till 6 PM today  8866288662"</span> or <span className='italics'>"Breaking: Modi govt is finally giving 15 Lakhs to people. But you have to call 8866288662 today to register. Hurry up. Call NOW.  That number again 8866288662"</span></li>
           <li><span className="bold">Tweets promising "Babri Masjid back"</span>: This is small minority of tweet but with very communal content like <span className="italics" >"Want ur Masjid back? okay give a Simple Call on #8866288662 and get Rs 64.60 Talk time Voting Started now https://t.co/jXccqTNMJC"</span></li>
-          <li><span className="bold">Tweets saying calling this number to register you protest against BJP or to support the protest against CAA:</span> This category of tweets was targeted specifically toward the people who are either opposing the act or are anti-BJP or Congrass or AAP supporters. The content in this category varied from supporting Rahul Gandhi to be next Congress president to supporting Arvind Kejriwal to be the next CM of Delhi to supporting the protest against the act.</li>
+          <li><span className="bold">Tweets saying calling this number to register you protest against BJP or to support the protest against CAA:</span> This category of tweets was targeted specifically toward the people who are either opposing the act or are anti-BJP(the ruling party) or Indian National Congress or Aam Aadmi Party supporters. The content in this category varied from supporting Rahul Gandhi to be next Congress president to supporting Arvind Kejriwal to be the next CM of Delhi to supporting the protest against the act.</li>
         </ol>
         <br />
         <hr />
@@ -253,7 +253,7 @@ function App() {
       </div>
       <br />
       <div className='lexicon-visual'>
-        <BubbleChart
+        <BubblechartCanvas
           data={supportWordCount}
           width={500}
           height={500}
@@ -262,7 +262,7 @@ function App() {
           maxValue={10}
           text={'Truthful Tweets'}
         />
-        <BubbleChart
+        <BubblechartCanvas
           data={misinfoWordCount}
           width={500}
           height={500}
@@ -271,7 +271,7 @@ function App() {
           maxValue={10}
           text={'Tweets Spreading Falsehoods'}
         />
-        <BubbleChart
+        <BubblechartCanvas
           data={trollWordCount}
           width={500}
           height={500}
@@ -300,7 +300,7 @@ function App() {
           Conclusion
         </div>
         <p>
-          Although this is very small subset of all the available tweets, this helps us to see a pattern. It highlights the big problem with getting infomation from Twitter. <br /><br /> <span className="italics">"Fake news is perfect for spreadability: It’s going to be shocking, it’s going to be surprising, and it’s going to be playing on people’s emotions, and that’s a recipe for how to spread misinformation"</span>, Miriam Metzger, a UC Santa Barbara communications researcher explained to a <a href="https://www.vox.com/" target="_blank" rel="noopener noreferrer">Vox</a> reporter [<a href="https://www.vox.com/science-and-health/2018/3/8/17085928/fake-news-study-mit-science" target="_blank" rel="noopener noreferrer">article here</a>]. It seems that the same strategy was used here to promote the number.<br /><br />Many times trolling help to achieve the goal it aims to defeat, as it promotes the same thing it aims to impede.<span className='italics bold'> As there is no such thing as bad PR, if no one has heard of you.</span> For ex. in this case some of the trolling tweets were shared hundreds of time (as trolling tweets are generally shared more time than fact checking tweets), which although make fun of the tweets spreading falsehood, also helped spreading the number and therefore helping to promote it.<br /><br />These visualizations can also be used to identify bots or paid accounts by looking at the users who have  
+          Although this is very small subset of all the available tweets, this helps us to see a pattern. It highlights the big problem with getting infomation from Twitter. <br /><br /> <span className="italics">"Fake news is perfect for spreadability: It’s going to be shocking, it’s going to be surprising, and it’s going to be playing on people’s emotions, and that’s a recipe for how to spread misinformation"</span>, Miriam Metzger, a UC Santa Barbara communications researcher explained to a <a href="https://www.vox.com/" target="_blank" rel="noopener noreferrer">Vox</a> reporter [<a href="https://www.vox.com/science-and-health/2018/3/8/17085928/fake-news-study-mit-science" target="_blank" rel="noopener noreferrer">article here</a>]. It seems that the same strategy was used here to promote the number.<br /><br />Many times trolling help to achieve the goal it aims to defeat, as it promotes the same thing it aims to impede.<span className='italics bold'> As there is no such thing as bad PR, if no one has heard of you.</span> For example in this case some of the trolling tweets were shared hundreds of time (as trolling tweets are generally shared more time than fact checking tweets), which although make fun of the tweets spreading falsehood, also helped spreading the number and therefore helping to promote it.<br /><br />These visualizations can also be used to identify bots or paid accounts by looking at the users who have  
         </p>
         <ol>
             <li>Tweeted same tweets multiple times</li>
