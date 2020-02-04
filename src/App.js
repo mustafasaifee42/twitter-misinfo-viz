@@ -40,7 +40,7 @@ function App() {
 
   let falsehoodByCategories = d3.nest()
     .key(d => d.Category)
-    .entries(objVal['Clickbait']);
+    .entries(objVal['Misinformation by Pro-CAA Users']);
   let retweetTotal = 0, retweetsAvg, likeTotal = 0,  likeAvg, truthretweetAvg, truthretweetTotal = 0, truthlikeAvg, truthlilkeTotal = 0, truthretweetTotalWoShah,truthlikesTotalWoShah;
   let NetflixretweetTotal = 0, NetflixretweetsAvg, NetflixlikeTotal = 0,  NetflixlikeAvg;
   falsehoodByCategories[4].values.forEach(d => {
@@ -49,11 +49,11 @@ function App() {
   })
   NetflixretweetsAvg = NetflixretweetTotal / falsehoodByCategories[4].values.length
   NetflixlikeAvg = NetflixlikeTotal / falsehoodByCategories[4].values.length
-  objVal['Clickbait'].forEach(d => {
+  objVal['Misinformation by Pro-CAA Users'].forEach(d => {
     retweetTotal = retweetTotal + d.Retweet
     likeTotal = likeTotal + d.Likes
   })
-  objVal['Misinformation Anti-CAA'].forEach(d => {
+  objVal['Misinformation by Anti-CAA Users'].forEach(d => {
     retweetTotal = retweetTotal + d.Retweet
     likeTotal = likeTotal + d.Likes
   })
@@ -62,7 +62,7 @@ function App() {
     truthlilkeTotal = truthlilkeTotal + d.Likes
   })
 
-  let seq = ['Support CAA','Clickbait','Fact check + Trolling','Misinformation Anti-CAA','Unknown']
+  let seq = ['Support CAA','Misinformation by Pro-CAA Users','Fact check + Trolling','Misinformation by Anti-CAA Users','Unknown']
   let key = ['Truthful Tweets','Tweets Spreading Falsehoods','Fact Checking + Trolling','Unclassified / Neutral']
   let value = [obj[seq[0]],obj[seq[1]] + obj[seq[3]],obj[seq[2]],obj[seq[4]]]
   retweetsAvg = (retweetTotal / (obj[seq[1]] + obj[seq[3]])).toFixed(1)
@@ -156,10 +156,10 @@ function App() {
           Key Findings
         </div>
         <p>
-          Of <span className="bold">{data.length}</span> tweets analyzed, <span className="bold truthfull">{obj['Support CAA']}</span> tweets are truthful tweets, <span className="bold red">{obj['Clickbait'] + obj['Misinformation Anti-CAA']}</span> tweets spreads falsehoods, <span className="bold troll">{obj['Fact check + Trolling']}</span> tweets are tweets trolling other users and <span className="bold unknown">{obj['Unknown']}</span> tweets are either neutral or unclassified.
+          Of <span className="bold">{data.length}</span> tweets analyzed, <span className="bold truthfull">{obj['Support CAA']}</span> tweets are truthful tweets, <span className="bold red">{obj['Misinformation by Pro-CAA Users'] + obj['Misinformation by Anti-CAA Users']}</span> tweets spreads falsehoods, <span className="bold troll">{obj['Fact check + Trolling']}</span> tweets are tweets trolling other users and <span className="bold unknown">{obj['Unknown']}</span> tweets are either neutral or unclassified.
         </p>
         <br />
-        <div className='red quote'>Around <span className='bold'>1 in 3 ({((obj['Clickbait'] + obj['Misinformation Anti-CAA']) * 100 / data.length).toFixed(1)}%)</span> tweets that mentions 88662 88662 spreads <span className="bold">falsehood</span></div>
+        <div className='red quote'>Around <span className='bold'>1 in 3 ({((obj['Misinformation by Pro-CAA Users'] + obj['Misinformation by Anti-CAA Users']) * 100 / data.length).toFixed(1)}%)</span> tweets that mentions 88662 88662 spreads <span className="bold">falsehood</span></div>
         <Donut 
            total={data.length}
            text={'total tweets'}
@@ -197,9 +197,9 @@ function App() {
           <li>Tweets <span className="bold">discourging</span> users to call using falsehood</li>
         </ol>
         <br />
-        <div className='red quote'><span className='bold'>{( obj['Clickbait'] * 100 / (obj['Clickbait'] + obj['Misinformation Anti-CAA'])).toFixed(1)}%</span> of tweets spreading falsehoods <span className="bold">encouraged</span> users to call the number on the basis of tantalising offers. Therefore, it can be said that a vast majority of tweets spreading falsehood are from the side that is in support of the act</div>
+        <div className='red quote'><span className='bold'>{( obj['Misinformation by Pro-CAA Users'] * 100 / (obj['Misinformation by Pro-CAA Users'] + obj['Misinformation by Anti-CAA Users'])).toFixed(1)}%</span> of tweets spreading falsehoods <span className="bold">encouraged</span> users to call the number on the basis of tantalising offers. Therefore, it can be said that a vast majority of tweets spreading falsehood are from the side that is in support of the act</div>
         <Donut 
-           total={obj['Clickbait'] + obj['Misinformation Anti-CAA']}
+           total={obj['Misinformation by Pro-CAA Users'] + obj['Misinformation by Anti-CAA Users']}
            text={'falsehood tweets'}
            width = {720}
            height = {400}
@@ -207,7 +207,7 @@ function App() {
            keyValue={['Tweets encouraging to call', 'Tweets discouraging to call']}
            keyPos={[425,300]}
            radius={200}
-           value={[obj['Clickbait'],obj['Misinformation Anti-CAA']]}
+           value={[obj['Misinformation by Pro-CAA Users'],obj['Misinformation by Anti-CAA Users']]}
            dx={0}
            dx1={0}
            dy={-15}

@@ -23,7 +23,7 @@ class ProjectCards extends Component {
                 return 1
               return 0.1
             case 'false':
-              if(d.Classification === 'Clickbait' || d.Classification === 'Misinformation Anti-CAA')
+              if(d.Classification === 'Misinformation by Pro-CAA Users' || d.Classification === 'Misinformation by Anti-CAA Users')
                 return 1
               return 0.1
             case 'troll':
@@ -107,9 +107,9 @@ class ProjectCards extends Component {
             return '#ff9800'
           if(d.Classification === 'Unknown')
             return '#aaa'
-          if(d.Classification === 'Clickbait')
+          if(d.Classification === 'Misinformation by Pro-CAA Users')
             return '#e03e3e'
-          if(d.Classification === 'Misinformation Anti-CAA')
+          if(d.Classification === 'Misinformation by Anti-CAA Users')
             return '#e03e3e'
         },
         "stroke":(d,i) => {
@@ -119,9 +119,9 @@ class ProjectCards extends Component {
             return '#ff9800'
           if(d.Classification === 'Unknown')
             return '#aaa'
-          if(d.Classification === 'Clickbait')
+          if(d.Classification === 'Misinformation by Pro-CAA Users')
             return '#e03e3e'
-          if(d.Classification === 'Misinformation Anti-CAA')
+          if(d.Classification === 'Misinformation by Anti-CAA Users')
             return '#e03e3e'
 
         },
@@ -180,7 +180,7 @@ class ProjectCards extends Component {
                     return 1
                   return 0.1
                 case 'false':
-                  if(d.Classification === 'Clickbait' || d.Classification === 'Misinformation Anti-CAA')
+                  if(d.Classification === 'Misinformation by Pro-CAA Users' || d.Classification === 'Misinformation by Anti-CAA Users')
                     return 1
                   return 0.1
                 case 'troll':
