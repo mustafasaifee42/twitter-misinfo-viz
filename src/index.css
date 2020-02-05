@@ -48,7 +48,9 @@ hr{
 .red{
   color:rgb(224, 62, 62);
 }
-
+.bubblechart-div{
+  text-align: center;
+}
 .quote{
   font-size: 24px;
   line-height: 36px;
@@ -111,12 +113,12 @@ ol{
   margin: auto;
   max-width: 720px; 
   margin-top: 20px;
-  padding:20px 0;
+  padding:20px 20px;
 }
 .container1{
   margin: auto;
   max-width: 720px; 
-  padding:20px 0;
+  padding:20px;
 }
 .header-wrap{
   margin: auto;
@@ -284,6 +286,8 @@ p {
 
 .twt{
   display: flex;
+  width: 90vw;
+  justify-content: space-around;
 }
 
 .section-head-div{
@@ -298,6 +302,7 @@ p {
   align-items: center;
   margin: auto;
   justify-content: center;
+  flex-wrap: wrap;
 
 }
 
@@ -310,7 +315,7 @@ p {
   background-color: #fff;
   color:#414141;
   padding: 10px;
-  margin: 0 5px;
+  margin: 5px;
   cursor: pointer;
 }
 .truthfull-filter{

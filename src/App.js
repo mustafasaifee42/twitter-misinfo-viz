@@ -11,6 +11,7 @@ import {
 } from 'react-share';
 import ReactGA from 'react-ga';
 import Graph from './Graph';
+import GraphVertical from './GraphVertical';
 import Donut from './Donut';
 import BubblechartCanvas from './BubblechartCanvas';
 import TimeHistoGram from './TimeHistoGram';
@@ -25,6 +26,7 @@ ReactGA.set({ anonymizeIp: true });
 ReactGA.pageview('/');
 
 function App() {
+  let wid = window.innerWidth;
   data.forEach((d,i) => {
     d['Date And Time'] = new Date(d['Date And Time'])
   })
@@ -73,6 +75,17 @@ function App() {
   truthlikeAvg = (truthlilkeTotal / obj[seq[0]]).toFixed(1)
   let truthretweetAvgWoShah = (truthretweetTotalWoShah / obj[seq[0]]).toFixed(1)
   let truthlikeAvgWoShah = (truthlikesTotalWoShah / obj[seq[0]]).toFixed(1)
+  let graphDiv = <GraphVertical
+    width={0.95 * wid}
+    height={2050}
+    data={data}
+  />
+  if (wid > 1024)
+    graphDiv = <Graph
+      width={window.innerWidth - 50}
+      height={650}
+      data={data}
+    />
   return (
     <div className="App">
       <div className="header">
@@ -164,12 +177,12 @@ function App() {
         <Donut 
            total={data.length}
            text={'total tweets'}
-           width = {720}
-           height = {400}
+           width = {wid >= 720 ? 720 : wid - 40}
+           height = {wid >= 720 ? 400 : 520}
            color={['#c0ca33','#e03e3e','#ff9800','#aaa']}
            keyValue={key}
-           keyPos={[425,250]}
-           radius={200}
+           keyPos={wid >= 720 ? [425,250] : [30,400]}
+           radius={wid >= 380 ? 200 : wid / 2}
            value={value}
            dx={-22}
            dx1={20}
@@ -183,10 +196,11 @@ function App() {
         <TimeHistoGram 
           data={data}
           graphHeight={150}
-          width={720}
+          width={wid >= 720 ? 720 : 0.9 * wid}
           height={425}
           color={['#c0ca33','#e03e3e','#ff9800']}
           overlap = {50}
+          showAlternate={wid >= 660 ? false : true}
         />
         <hr />
         <span className="bold">Types of falsehoods</span>
@@ -202,12 +216,12 @@ function App() {
         <Donut 
            total={obj['Misinformation by Pro-CAA Users'] + obj['Misinformation by Anti-CAA Users']}
            text={'falsehood tweets'}
-           width = {720}
-           height = {400}
+           width = {wid >= 720 ? 720 : wid - 40}
+           height = {wid >= 720 ? 400 : 490}
            color={['#e03e3e','#aaa']}
            keyValue={['Tweets encouraging to call', 'Tweets discouraging to call']}
-           keyPos={[425,300]}
-           radius={200}
+           keyPos={wid >= 720 ? [425,300] : [30,420]}
+           radius={wid >= 380 ? 200 : wid / 2}
            value={[obj['Misinformation by Pro-CAA Users'],obj['Misinformation by Anti-CAA Users']]}
            dx={0}
            dx1={0}
@@ -256,17 +270,17 @@ function App() {
       <div className='lexicon-visual'>
         <BubblechartCanvas
           data={supportWordCount}
-          width={500}
-          height={500}
+          width={wid >= 500 ? 500 : 0.95 * wid}
+          height={wid >= 500 ? 500 : 0.95 * wid}
           color={'#c0ca33'}
-          maxRadius={75}
+          maxRadius={wid >= 500 ? 75 : 0.95 * wid * 75 / 500}
           maxValue={10}
           text={'Truthful Tweets'}
         />
         <BubblechartCanvas
           data={misinfoWordCount}
-          width={500}
-          height={500}
+          width={wid >= 500 ? 500 : 0.95 * wid}
+          height={wid >= 500 ? 500 : 0.95 * wid}
           color={'#e03e3e'}
           maxRadius={75}
           maxValue={10}
@@ -274,10 +288,10 @@ function App() {
         />
         <BubblechartCanvas
           data={trollWordCount}
-          width={500}
-          height={500}
+          width={wid >= 500 ? 500 : 0.95 * wid}
+          height={wid >= 500 ? 500 : 0.95 * wid}
           color={'#ff9800'}
-          maxRadius={75}
+          maxRadius={wid >= 500 ? 75 : 0.95 * wid * 75 / 500}
           maxValue={10}
           text={'Fact Checking + Trolling'}
         />
@@ -289,11 +303,7 @@ function App() {
       <br />
       <br />
       <div id='viz'>
-        <Graph
-          width={window.innerWidth - 50}
-          height={650}
-          data={data}
-        />
+        {graphDiv}
       </div>
       <div className="container1">
         <hr />

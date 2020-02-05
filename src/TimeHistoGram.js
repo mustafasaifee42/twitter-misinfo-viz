@@ -68,22 +68,22 @@ class ProjectCards extends Component {
     let g  = select(node)
       .append('g')
       .attrs({
-        'transform': `translate(${20},${20})`
+        'transform': `translate(${0},${20})`
       })
     let g1  = select(node)
       .append('g')
       .attrs({
-        'transform': `translate(${20},${20 + this.props.graphHeight - this.props.overlap})`
+        'transform': `translate(${0},${20 + this.props.graphHeight - this.props.overlap})`
       })
     let g2  = select(node)
       .append('g')
       .attrs({
-        'transform': `translate(${20},${20 + 2 * (this.props.graphHeight - this.props.overlap)})`
+        'transform': `translate(${0},${20 + 2 * (this.props.graphHeight - this.props.overlap)})`
       })
         
     let xScale = scaleLinear()
       .domain([0, 84]) // input
-      .range([0, this.props.width - 30]); // output
+      .range([0, this.props.width - 10]); // output
     let yScale = scaleLinear()
       .domain([0, 115]) // input
       .range([this.props.graphHeight,0]); // output
@@ -95,7 +95,7 @@ class ProjectCards extends Component {
       .attrs({
         'x1':0,
         'y1':150,
-        'x2':this.props.width - 30,
+        'x2':this.props.width - 10,
         'y2':150,
         'stroke':'#aaa',
         'fill':'none',
@@ -154,7 +154,7 @@ class ProjectCards extends Component {
       .attrs({
         'x1':0,
         'y1':150,
-        'x2':this.props.width - 30,
+        'x2':this.props.width - 10,
         'y2':150,
         'stroke':'#aaa',
         'fill':'none',
@@ -212,7 +212,7 @@ class ProjectCards extends Component {
       .attrs({
         'x1':0,
         'y1':150,
-        'x2':this.props.width - 30,
+        'x2':this.props.width - 10,
         'y2':150,
         'stroke':'#aaa',
         'fill':'none',
@@ -247,7 +247,7 @@ class ProjectCards extends Component {
           'font-size':12,
         })
       g2.append('text')
-        .text('a small wave of fact checking and trolling tweets warning the users')
+        .text('a small wave of fact checking and trolling tweets warning the')
         .attrs({
           'x':0,
           'y':65 + this.props.overlap,
@@ -256,7 +256,7 @@ class ProjectCards extends Component {
           'font-size':12,
         })
       g2.append('text')
-        .text('about the misinformation started')
+        .text('users about the misinformation started')
         .attrs({
           'x':0,
           'y':82 + this.props.overlap,
@@ -287,6 +287,14 @@ class ProjectCards extends Component {
             if (i === 84)
               return 'end'
             return 'middle'
+          },
+          'opacity': () => {
+            if(this.props.showAlternate)
+              if (i % 24 === 0)
+                return 1
+              else 
+                return 0
+            return 1
           },
           'font-family':'IBM Plex Sans',
           'font-size':10

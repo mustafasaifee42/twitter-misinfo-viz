@@ -34,9 +34,7 @@ class ProjectCards extends Component {
       // draw nodes
       context.strokeStyle = this.props.color;
       context.fillStyle = "#414141"
-      context.font = "700 16px IBM Plex Sans";
       context.textAlign='center';
-      context.fillText(`${this.props.text}`,this.props.width / 2,20);
       context.globalAlpha = 1;
       context.beginPath();
       data.forEach(d => {
@@ -81,7 +79,9 @@ class ProjectCards extends Component {
   }
   render(){
     return (
-      <div className='bubblechart-div' ref={node => this.node = node}>
+      <div className='bubblechart-div'>
+        {this.props.text}
+        <div ref={node => this.node = node} />
       </div>
     )
   }
