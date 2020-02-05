@@ -252,7 +252,7 @@ class ProjectCards extends Component {
             Inactive Users
           </div>
         </div>
-        <p className='italics text-mouseover'>Mouseover to see the details and highlight other tweets by the same user; and click to open the tweet in new window</p>
+        <p className='italics text-mouseover'>Size of circle represents the no. of retweets. Mouseover to see the details and highlight other tweets by the same user; and click to open the tweet in new window</p>
         <svg width={this.props.width} height={this.props.height} ref={node => this.node = node}>
         </svg>
       </div>
