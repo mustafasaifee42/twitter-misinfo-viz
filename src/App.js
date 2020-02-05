@@ -79,7 +79,7 @@ function App() {
           <div className='header-wrap'>
             <div className='header-title'>
               <div className='header-span'>
-                Curious Case of 88662 88662:<br />Influence Campaign {`&`} Misinformation on Twitter
+                Falsehood flies, and the Truth comes limping after it<br /><span className='italics header-subtext'>Influence campaign {`&`} disinformation on Twitter</span>
               </div>
             </div>
           </div>
@@ -88,10 +88,10 @@ function App() {
         <div className='share share-top'>
           <span className='footer-start'>Share the <span aria-label="love-emoji" role="img">💖</span></span>
           <div className='icons'>
-            <FacebookShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' quote="Curious Case of 88662 88662: Influence Campaign and Misinformation on Twitter: ">
+            <FacebookShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' quote="Falsehood flies, and the Truth comes limping after it: Influence campaign and disinformation on Twitter: ">
               <FacebookIcon size={32} round={true} />
             </FacebookShareButton>
-            <TwitterShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' title="Curious Case of 88662 88662: Influence Campaign and Misinformation on Twitter: ">
+            <TwitterShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' title="Falsehood flies, and the Truth comes limping after it: Influence campaign and disinformation on Twitter: ">
               <TwitterIcon size={32} round={true} />
             </TwitterShareButton>
           </div>
@@ -120,16 +120,17 @@ function App() {
         <div className='section-title' id='abstract'>
           Abstract
         </div>
+        <div className="quotation">“Falsehood flies, and truth comes limping after it, so that when men come to be undeceived, it is too late; the jest is over, and the tale hath had its effect”<br /><span className='bold'>Jonathan Swift</span></div>
         <p>
-          In the first week of January a toll-free number 88662 88662 was shared by the Indian government asking people to give a missed call on this number to show their support for the Citizenship Amendment Act 2019. [<a href='https://en.wikipedia.org/wiki/Citizenship_(Amendment)_Act,_2019' target='_blank'  rel="noopener noreferrer">wiki article</a>] <br /> <br /> In a few day the number was shared thousands of times by differnet users and soon reports started coming in how this number was shared by promising tantalising offers for people who called the number. [<a href='https://scroll.in/article/948826/from-sex-to-netflix-subscriptions-heres-what-was-promised-for-dialling-bjps-caa-support-line' target='_blank'  rel="noopener noreferrer">News report here</a>]<br /><br />I was interested in the extend and spread of misinformation campaign on Twitter. Therefore I scraped 3589 tweets <span className="italics">(tweeted from 10:00 AM of 2nd Jan 2020 to 10:00 PM of 5th Jan 2020)</span> that mentioned this number and then I analyzed the content of these tweets. I was mainly interested in:
+          In the first week of January a toll-free number 88662 88662 was shared by the Indian government asking people to give a missed call on this number to show their support for the Citizenship Amendment Act 2019. [<a href='https://en.wikipedia.org/wiki/Citizenship_(Amendment)_Act,_2019' target='_blank'  rel="noopener noreferrer">wiki article</a>] <br /> <br /> In a few day the number was shared thousands of times by differnet users and soon reports started coming in how this number was shared by promising tantalising offers for people who called the number. [<a href='https://scroll.in/article/948826/from-sex-to-netflix-subscriptions-heres-what-was-promised-for-dialling-bjps-caa-support-line' target='_blank'  rel="noopener noreferrer">News report here</a>]<br /><br />I was interested in the extend and spread of disinformation campaign on Twitter. Therefore I scraped 3589 tweets <span className="italics">(tweeted from 10:00 AM of 2nd Jan 2020 to 10:00 PM of 5th Jan 2020)</span> that mentioned this number and then I analyzed the content of these tweets. I was mainly interested in:
         </p>
         <ol>
-          <li>Extend of the misinformation i.e. tweets encouraging social-media users to call the toll-free number but concealed the exactly function of the number.</li>
-          <li>Spread of the misinformation i.e. retweets and likes for tweets encouraging social-media users to call the toll-free number but concealed the exactly function of the number.</li>
-          <li>Different types of misinformation campaigns</li>
+          <li>Extend of the disinformation i.e. tweets encouraging social-media users to call the toll-free number but concealed the exactly function of the number.</li>
+          <li>Spread of the disinformation i.e. retweets and likes for tweets encouraging social-media users to call the toll-free number but concealed the exactly function of the number.</li>
+          <li>Different types of disinformation campaigns</li>
         </ol>
         <p>  
-          <span className="italics">Please note.: The intention here is not to make a statement about the Citizenship Amendment Act but to analyze how twitter is used to promote misinformation. I used this because of this being topical and to see if the reports suggesting about misinformation about the number on twitter were anecdotal or does the data suggest that the tweets promoting falsehoods were a substantial percentage of all the tweets.</span>
+          <span className="italics">Please note.: The intention here is not to make a statement about the Citizenship Amendment Act but to analyze how twitter is used to promote disinformation. I used this because of this being topical and to see if the reports suggesting about disinformation about the number on twitter were anecdotal or does the data suggest that the tweets promoting falsehoods were a substantial percentage of all the tweets.</span>
         </p>
         <hr />
         <div className='section-title' id="challenges">
@@ -143,12 +144,12 @@ function App() {
           Data Collection {`&`} Methodology
         </div>
         <p>
-          The data was collected using Tweepy and Twitter API in Python. The data set has <span className="bold red">3589 tweets</span>, tweeted from <span className="italics">10:00 AM of 2nd Jan 2020 to 10:00 PM of 5th Jan 2020</span> mentioning '8866288662' or '88662-88662' in the content. The data and analysis only focus on the time window of 3 days mentioned and was last updated on 20th Jan 2020 (so its possible the retweet and likes amount are not updated and many users accounts might now be inactive or suspended). The whole data set can be downloaded <a href="./data.json" target="_blank" rel="noopener noreferrer">here</a>. <br /><br />First round of classification is done using keyword search. For ex. if a tweet had 'CAA' or 'CAB' and 'support' mentioned and words like 'Netflix' or 'free offer' are <span className='bold'>not</span> mentioned then it was classified to category of tweets which supported CAA (truthful tweets) but if it didn't mention those things and mentioned 'free netflix subscription' then it was classified to category of tweet which spread misinformation. After this prelimanary tagging a secondary manual tagging was done for the tweets which could not fall under these categories.
+          The data was collected using Tweepy and Twitter API in Python. The data set has <span className="bold red">3589 tweets</span>, tweeted from <span className="italics">10:00 AM of 2nd Jan 2020 to 10:00 PM of 5th Jan 2020</span> mentioning '8866288662' or '88662-88662' in the content. The data and analysis only focus on the time window of 3 days mentioned and was last updated on 20th Jan 2020 (so its possible the retweet and likes amount are not updated and many users accounts might now be inactive or suspended). The whole data set can be downloaded <a href="./data.json" target="_blank" rel="noopener noreferrer">here</a>. <br /><br />First round of classification is done using keyword search. For ex. if a tweet had 'CAA' or 'CAB' and 'support' mentioned and words like 'Netflix' or 'free offer' are <span className='bold'>not</span> mentioned then it was classified to category of tweets which supported CAA (truthful tweets) but if it didn't mention those things and mentioned 'free netflix subscription' then it was classified to category of tweet which spread disinformation. After this prelimanary tagging a secondary manual tagging was done for the tweets which could not fall under these categories.
         </p>
         <ol>
           <li><span className="bold">Truthful Tweets</span>: Tweets encouraging twitter user to give give a missed call on the number to support the Citizenship Amendment Act (the original intention of the number)</li>
           <li><span className="bold">Tweets Spreading Falsehoods</span>: Tweets encouraging user to call on number based on tantalising offer and tweets discourging user to call on the number based on fake news.</li>
-          <li><span className="bold">Fact Checking + Trolling</span>: Tweets which fact check or troll the users that shared the tweets spreading misinformation and the tweets spreading misinformation</li>
+          <li><span className="bold">Fact Checking + Trolling</span>: Tweets which fact check or troll the users that shared the tweets spreading disinformation and the tweets spreading disinformation</li>
           <li><span className="bold">Unclassified / Neutral</span>: Tweets which I was not able to classify in any of the above category mainly because of lack of context or because the content of the tweet seemed neutral to me</li>
         </ol>
         <hr />
@@ -300,7 +301,7 @@ function App() {
           Conclusion
         </div>
         <p>
-          Although this is very small subset of all the available tweets, this helps us to see a pattern. It highlights the big problem with getting infomation from Twitter. <br /><br /> <span className="italics">"Fake news is perfect for spreadability: It’s going to be shocking, it’s going to be surprising, and it’s going to be playing on people’s emotions, and that’s a recipe for how to spread misinformation"</span>, Miriam Metzger, a UC Santa Barbara communications researcher explained to a <a href="https://www.vox.com/" target="_blank" rel="noopener noreferrer">Vox</a> reporter [<a href="https://www.vox.com/science-and-health/2018/3/8/17085928/fake-news-study-mit-science" target="_blank" rel="noopener noreferrer">article here</a>]. It seems that the same strategy was used here to promote the number.<br /><br />Many times trolling help to achieve the goal it aims to defeat, as it promotes the same thing it aims to impede.<span className='italics bold'> As there is no such thing as bad PR, if no one has heard of you.</span> For example in this case some of the trolling tweets were shared hundreds of time (as trolling tweets are generally shared more time than fact checking tweets), which although make fun of the tweets spreading falsehood, also helped spreading the number and therefore helping to promote it.<br /><br />These visualizations can also be used to identify bots or paid accounts by looking at the users who have  
+          Although this is very small subset of all the available tweets, this helps us to see a pattern. It highlights the big problem with getting infomation from Twitter. <br /><br /> <span className="italics">"Fake news is perfect for spreadability: It’s going to be shocking, it’s going to be surprising, and it’s going to be playing on people’s emotions, and that’s a recipe for how to spread disinformation"</span>, Miriam Metzger, a UC Santa Barbara communications researcher explained to a <a href="https://www.vox.com/" target="_blank" rel="noopener noreferrer">Vox</a> reporter [<a href="https://www.vox.com/science-and-health/2018/3/8/17085928/fake-news-study-mit-science" target="_blank" rel="noopener noreferrer">article here</a>]. It seems that the same strategy was used here to promote the number.<br /><br />Many times trolling help to achieve the goal it aims to defeat, as it promotes the same thing it aims to impede.<span className='italics bold'> As there is no such thing as bad PR, if no one has heard of you.</span> For example in this case some of the trolling tweets were shared hundreds of time (as trolling tweets are generally shared more time than fact checking tweets), which although make fun of the tweets spreading falsehood, also helped spreading the number and therefore helping to promote it.<br /><br />These visualizations can also be used to identify bots or paid accounts by looking at the users who have  
         </p>
         <ol>
             <li>Tweeted same tweets multiple times</li>
@@ -313,10 +314,10 @@ function App() {
           <div className='share'>
             <span className='footer-start'>You got all the way down here, consider sharing the <span aria-label="love-emoji" role="img">💖</span></span>
             <div className='icons'>
-              <FacebookShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' quote="Curious Case of 88662 88662: Influence Campaign and Misinformation on Twitter: ">
+              <FacebookShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' quote="Falsehood flies, and the Truth comes limping after it: Influence campaign and disinformation on Twitter: ">
                 <FacebookIcon size={32} round={true} />
               </FacebookShareButton>
-              <TwitterShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' title="Curious Case of 88662 88662: Influence Campaign and Misinformation on Twitter: ">
+              <TwitterShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' title="Falsehood flies, and the Truth comes limping after it: Influence campaign and disinformation on Twitter: ">
                 <TwitterIcon size={32} round={true} />
               </TwitterShareButton>
             </div>

@@ -56,7 +56,12 @@ hr{
   border-left: 2px solid rgb(224, 62, 62);
   font-style: italic;
 }
-
+.quotation{
+  margin-top:40px;
+  padding-left: 15px;
+  border-left: 2px solid #666;
+  font-style: italic;
+}
 .bold{
   font-weight: 700;
 }
@@ -118,7 +123,10 @@ ol{
   max-width: 1024px;
   position: relative; 
 }
-
+.header-subtext{
+  font-weight: 500;
+  font-size: 30px;
+}
 .header-title{
   line-height: 1.8;
 }
