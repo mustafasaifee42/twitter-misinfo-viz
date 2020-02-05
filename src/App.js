@@ -88,10 +88,10 @@ function App() {
         <div className='share share-top'>
           <span className='footer-start'>Share the <span aria-label="love-emoji" role="img">💖</span></span>
           <div className='icons'>
-            <FacebookShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' quote="Falsehood flies, and the Truth comes limping after it: Influence campaign and disinformation on Twitter: ">
+            <FacebookShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' quote="Falsehood flies, and the Truth comes limping after it: Case study on spread of 88662-88662 (the number used by home ministry of India to garner support for one of their law) on twitter (analysis of 3589 tweets (from 10 AM 2.01 to 10 PM 5.01):">
               <FacebookIcon size={32} round={true} />
             </FacebookShareButton>
-            <TwitterShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' title="Falsehood flies, and the Truth comes limping after it: Influence campaign and disinformation on Twitter: ">
+            <TwitterShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' title="Falsehood flies, and the Truth comes limping after it: Case study on spread of 88662-88662 (the number used by home ministry of India to garner support for one of their law) on twitter (analysis of 3589 tweets (from 10 AM 2.01 to 10 PM 5.01):">
               <TwitterIcon size={32} round={true} />
             </TwitterShareButton>
           </div>
@@ -314,10 +314,10 @@ function App() {
           <div className='share'>
             <span className='footer-start'>You got all the way down here, consider sharing the <span aria-label="love-emoji" role="img">💖</span></span>
             <div className='icons'>
-              <FacebookShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' quote="Falsehood flies, and the Truth comes limping after it: Influence campaign and disinformation on Twitter: ">
+              <FacebookShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' quote="Falsehood flies, and the Truth comes limping after it: Case study on spread of 88662-88662 (the number used by home ministry of India to garner support for one of their law) on twitter (analysis of 3589 tweets (from 10 AM 2.01 to 10 PM 5.01): ">
                 <FacebookIcon size={32} round={true} />
               </FacebookShareButton>
-              <TwitterShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' title="Falsehood flies, and the Truth comes limping after it: Influence campaign and disinformation on Twitter: ">
+              <TwitterShareButton url='https://influence-campaign-on-twitter-visualisis fo.netlify.com/' title="Falsehood flies, and the Truth comes limping after it: Case study on spread of 88662-88662 (the number used by home ministry of India to garner support for one of their law) on twitter (analysis 3589 tweets (from 10 AM 2.01 to 10 PM 5.01): ">
                 <TwitterIcon size={32} round={true} />
               </TwitterShareButton>
             </div>
