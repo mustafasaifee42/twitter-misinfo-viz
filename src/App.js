@@ -88,10 +88,10 @@ function App() {
         <div className='share share-top'>
           <span className='footer-start'>Share the <span aria-label="love-emoji" role="img">💖</span></span>
           <div className='icons'>
-            <FacebookShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' quote="Curious case of 88662 88662: Misinformation and campaign on Twitter: ">
+            <FacebookShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' quote="Curious Case of 88662 88662: Influence Campaign and Misinformation on Twitter: ">
               <FacebookIcon size={32} round={true} />
             </FacebookShareButton>
-            <TwitterShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' title="Curious case of 88662 88662: Misinformation and campaign on Twitter: ">
+            <TwitterShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' title="Curious Case of 88662 88662: Influence Campaign and Misinformation on Twitter: ">
               <TwitterIcon size={32} round={true} />
             </TwitterShareButton>
           </div>
@@ -313,10 +313,10 @@ function App() {
           <div className='share'>
             <span className='footer-start'>You got all the way down here, consider sharing the <span aria-label="love-emoji" role="img">💖</span></span>
             <div className='icons'>
-              <FacebookShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' quote="Curious case of 88662 88662: Misinformation and campaign on Twitter: ">
+              <FacebookShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' quote="Curious Case of 88662 88662: Influence Campaign and Misinformation on Twitter: ">
                 <FacebookIcon size={32} round={true} />
               </FacebookShareButton>
-              <TwitterShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' title="Curious case of 88662 88662: Misinformation and campaign on Twitter: ">
+              <TwitterShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' title="Curious Case of 88662 88662: Influence Campaign and Misinformation on Twitter: ">
                 <TwitterIcon size={32} round={true} />
               </TwitterShareButton>
             </div>
