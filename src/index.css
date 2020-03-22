@@ -164,6 +164,7 @@ ol{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap:wrap;
 }
 
 .header-span{
@@ -475,6 +476,7 @@ a:hover{
 .reading-time{
   font-style: italic;
   font-weight: 700;
+  padding-right: 10px;
 }
 .share-top{
   justify-content: start;

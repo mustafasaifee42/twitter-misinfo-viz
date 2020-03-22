@@ -89,13 +89,13 @@ function App() {
   return (
     <div className="App">
       <div className="header">
-          <div className='header-wrap'>
-            <div className='header-title'>
-              <div className='header-span'>
-                Falsehood flies, and the Truth comes limping after it<br /><span className='italics header-subtext'>Influence campaign {`&`} disinformation on Twitter</span>
-              </div>
+        <div className='header-wrap'>
+          <div className='header-title'>
+            <div className='header-span'>
+              Falsehood flies, and the Truth comes limping after it<br /><span className='italics header-subtext'>Influence campaign {`&`} disinformation on Twitter</span>
             </div>
           </div>
+        </div>
       </div>
       <div className="share-header">
         <div className='share share-top'>
@@ -321,7 +321,7 @@ function App() {
           </ol> 
       </div>
         <div className="footer">
-          <div className='email'>Please email me at <a href="mailto:ddj2020@protonmail.com" target="_blank" rel="noopener noreferrer">ddj2020@protonmail.com</a> for suggestions or queries</div>
+          <div className='email'>Please email me at <a href="mailto:saifee.mustafa@gmail.com" target="_blank" rel="noopener noreferrer">saifee.mustafa@gmail.com</a> or connect on <a href="https://twitter.com/mustafasaifee42" target="_blank" rel="noopener noreferrer">twitter</a> for suggestions or queries. For other projects: visit <a href="https://mustafasaifee.netlify.com/" target="_blank" rel="noopener noreferrer">www.mustafasaifee.netlify.com</a></div>
           <div className='share'>
             <span className='footer-start'>You got all the way down here, consider sharing the <span aria-label="love-emoji" role="img">💖</span></span>
             <div className='icons'>
