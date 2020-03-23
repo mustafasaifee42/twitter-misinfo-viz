@@ -101,10 +101,10 @@ function App() {
         <div className='share share-top'>
           <span className='footer-start'>Share the <span aria-label="love-emoji" role="img">💖</span></span>
           <div className='icons'>
-            <FacebookShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' quote="Falsehood flies, and the Truth comes limping after it: Case study on spread of 88662-88662 (the number used by home ministry of India to garner support for one of their law) on twitter (analysis of 3589 tweets (from 10 AM 2.01 to 10 PM 5.01):">
+            <FacebookShareButton url='https://influence-campaign-on-twitter-visualized.mustafasaifee.com/' quote="Falsehood flies, and the Truth comes limping after it: Case study on spread of 88662-88662 (the number used by home ministry of India to garner support for one of their law) on twitter (analysis of 3589 tweets (from 10 AM 2.01 to 10 PM 5.01):">
               <FacebookIcon size={32} round={true} />
             </FacebookShareButton>
-            <TwitterShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' title="Falsehood flies, and the Truth comes limping after it: Case study on spread of 88662-88662 (the number used by home ministry of India to garner support for one of their law) on twitter (analysis of 3589 tweets (from 10 AM 2.01 to 10 PM 5.01):">
+            <TwitterShareButton url='https://influence-campaign-on-twitter-visualized.mustafasaifee.com/' title="Falsehood flies, and the Truth comes limping after it: Case study on spread of 88662-88662 (the number used by home ministry of India to garner support for one of their law) on twitter (analysis of 3589 tweets (from 10 AM 2.01 to 10 PM 5.01) via @mustafasaifee42:">
               <TwitterIcon size={32} round={true} />
             </TwitterShareButton>
           </div>
@@ -321,11 +321,11 @@ function App() {
           </ol> 
       </div>
         <div className="footer">
-          <div className='email'>Please email me at <a href="mailto:saifee.mustafa@gmail.com" target="_blank" rel="noopener noreferrer">saifee.mustafa@gmail.com</a> or connect on <a href="https://twitter.com/mustafasaifee42" target="_blank" rel="noopener noreferrer">twitter</a> for suggestions or queries. For other projects: visit <a href="https://mustafasaifee.netlify.com/" target="_blank" rel="noopener noreferrer">www.mustafasaifee.netlify.com</a></div>
+          <div className='email'>Please email me at <a href="mailto:saifee.mustafa@gmail.com" target="_blank" rel="noopener noreferrer">saifee.mustafa@gmail.com</a> or connect on <a href="https://twitter.com/mustafasaifee42" target="_blank" rel="noopener noreferrer">twitter</a> for suggestions or queries. For other projects: visit <a href="https://mustafasaifee.com/" target="_blank" rel="noopener noreferrer">www.mustafasaifee.com</a></div>
           <div className='share'>
             <span className='footer-start'>You got all the way down here, consider sharing the <span aria-label="love-emoji" role="img">💖</span></span>
             <div className='icons'>
-              <FacebookShareButton url='https://influence-campaign-on-twitter-visualized.netlify.com/' quote="Falsehood flies, and the Truth comes limping after it: Case study on spread of 88662-88662 (the number used by home ministry of India to garner support for one of their law) on twitter (analysis of 3589 tweets (from 10 AM 2.01 to 10 PM 5.01): ">
+              <FacebookShareButton url='https://influence-campaign-on-twitter-visualized.mustafasaifee.com/' quote="Falsehood flies, and the Truth comes limping after it: Case study on spread of 88662-88662 (the number used by home ministry of India to garner support for one of their law) on twitter (analysis of 3589 tweets (from 10 AM 2.01 to 10 PM 5.01): ">
                 <FacebookIcon size={32} round={true} />
               </FacebookShareButton>
               <TwitterShareButton url='https://influence-campaign-on-twitter-visualisis fo.netlify.com/' title="Falsehood flies, and the Truth comes limping after it: Case study on spread of 88662-88662 (the number used by home ministry of India to garner support for one of their law) on twitter (analysis 3589 tweets (from 10 AM 2.01 to 10 PM 5.01): ">
